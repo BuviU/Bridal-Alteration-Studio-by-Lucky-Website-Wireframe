@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nish’s Bridal Studio – Wireframe</title>
+<style>
+:root{--bg:#f4f4f2;--surf:#fff;--ink:#222;--mute:#666;--line:#999;--fill:#e4e4e0;--acc:#222;--acc-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1a1a;--surf:#242424;--ink:#eee;--mute:#aaa;--line:#777;--fill:#333;--acc:#eee;--acc-ink:#111}}
+:root[data-theme="dark"]{--bg:#1a1a1a;--surf:#242424;--ink:#eee;--mute:#aaa;--line:#777;--fill:#333;--acc:#eee;--acc-ink:#111}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Helvetica,Arial,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surf);z-index:10}
+.note{background:var(--fill);border-bottom:1px dashed var(--line);font-size:12px;text-align:center;padding:6px 12px;color:var(--mute)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surf);border-bottom:2px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;padding:12px 24px}
+.logo{border:2px solid var(--line);padding:6px 14px;font-weight:700;font-size:14px}
+nav{display:flex;gap:18px;flex:1;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-size:14px}
+nav a:hover{text-decoration:underline}
+.btn{display:inline-block;border:2px solid var(--acc);background:var(--acc);color:var(--acc-ink);padding:10px 20px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;font-family:inherit}
+.btn.o{background:transparent;color:var(--ink)}
+section{max-width:1040px;margin:0 auto;padding:56px 24px}
+.tag{font:11px/1 monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:block}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px}
+h2{font-size:28px;margin:0 0 20px}
+h3{font-size:17px;margin:0 0 8px}
+.ph{background:var(--fill);border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:12px;text-align:center;padding:10px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.hero .ph{min-height:340px}
+.sub{font-size:19px;color:var(--mute);margin:0 0 16px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.badge{border:1px solid var(--line);padding:4px 12px;font-size:13px;border-radius:99px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
+.trust{display:flex;flex-wrap:wrap;gap:20px;border-top:1px solid var(--line);padding-top:14px;font-size:14px;color:var(--mute)}
+.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid var(--line);margin-bottom:24px}
+.tabs button{background:none;border:2px solid transparent;border-bottom:none;padding:10px 18px;font:inherit;font-size:14px;color:var(--mute);cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--line);background:var(--surf);color:var(--ink);font-weight:700;margin-bottom:-2px}
+.panel[hidden]{display:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surf);border:2px solid var(--line);padding:20px}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.two .ph{min-height:260px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;counter-reset:s}
+.step{background:var(--surf);border:2px solid var(--line);padding:20px;position:relative}
+.step b.n{display:inline-block;border:2px solid var(--line);border-radius:50%;width:38px;height:38px;line-height:34px;text-align:center;margin-bottom:10px}
+.step p{margin:0;color:var(--mute);font-size:15px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.gal .ph{aspect-ratio:3/4}
+.gal figure{margin:0}
+.gal figcaption{font-size:12px;color:var(--mute);margin-top:4px}
+form{background:var(--surf);border:2px solid var(--line);padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px 24px}
+.f{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.f.full{grid-column:1/-1}
+input[type=text],input[type=email],input[type=tel],input[type=date],textarea{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:10px;font:inherit}
+textarea{min-height:90px}
+fieldset{border:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+legend{padding:0;margin-bottom:6px;font-size:14px}
+label.c{display:flex;gap:8px;align-items:center}
+.loc{font-style:normal}
+.map{min-height:200px;margin-top:12px}
+footer{border-top:2px solid var(--line);background:var(--surf);padding:28px 24px;text-align:center;font-size:13px;color:var(--mute)}
+.alt{background:color-mix(in srgb,var(--fill) 45%,transparent)}
+@media(max-width:720px){.hero,.two,form{grid-template-columns:1fr}header{padding:10px 16px}section{padding:40px 16px}}
+</style>
+</head>
+<body>
+<div class="note">WIREFRAME · text content only · greyscale placeholders for imagery · layout follows Creative Brief CB01</div>
+
+<header>
+  <span class="logo">[LOGO] Nish’s Bridal Studio</span>
+  <nav>
+    <a href="#home">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#process">Process</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="#contact">Book Consultation</a>
+</header>
+
+<!-- SECTION 1 -->
+<section id="home">
+  <span class="tag">Section 1 · Hero banner</span>
+  <div class="hero">
+    <div>
+      <h1>Expert Wedding Dress Alterations in Melbourne</h1>
+      <p class="sub">Flawless fits, custom veils, and couture bridal tailoring across North Melbourne, Keilor East, and Doreen.</p>
+      <p>Every bride deserves a dress that feels as extraordinary as her wedding day. At Nish’s Bridal Studio, we combine precision tailoring with couture craftsmanship to sculpt your gown to perfection. Whether you need delicate lace hemmed, a corset resized, a custom bustle added, or a bespoke veil crafted, our Melbourne dressmakers offer a relaxed, 1-on-1 studio experience.</p>
+      <div class="badges"><span class="badge">Studios: Keilor East</span><span class="badge">North Melbourne</span><span class="badge">Doreen</span></div>
+      <div class="ctas"><a class="btn" href="#contact">Book Your 1-on-1 Fitting</a><a class="btn o" href="#contact" data-tab="quote">Upload Dress for a Quote</a></div>
+      <div class="trust"><span>5.0 Rated Bridal Tailors</span><span>Express Photo-Shoot Fixes</span><span>Couture Quality Guarantee</span></div>
+    </div>
+    <div class="ph">[HERO IMAGE – bride in tailored gown]</div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section id="about" class="alt">
+  <span class="tag">Section 2 · About us (tabbed)</span>
+  <h2>About Nish’s Bridal Studio</h2>
+  <div class="tabs" role="tablist" data-g="about">
+    <button role="tab" aria-selected="true" data-t="a1">Our Story &amp; Craft</button>
+    <button role="tab" aria-selected="false" data-t="a2">Our 3 Melbourne Locations</button>
+    <button role="tab" aria-selected="false" data-t="a3">The Difference</button>
+  </div>
+  <div class="panel" id="a1">
+    <div class="two">
+      <div>
+        <p>At Nish’s Bridal Studio, we understand that a wedding gown is more than just a dress—it is a cherished memory in the making. With years of dedicated experience in bridal gown construction, delicate lace restoration, boning adjustments, and custom hand-beading, we provide bespoke alteration services tailored to your exact measurements.</p>
+        <p>From minimalist contemporary gowns to intricate heirloom dresses, our master tailors work with precision and care to ensure your dress flatters your figure comfortably from the first step down the aisle to the final dance.</p>
+      </div>
+      <div class="ph">[STUDIO / TAILOR AT WORK IMAGE]</div>
+    </div>
+  </div>
+  <div class="panel" id="a2" hidden>
+    <p>To serve brides across Melbourne’s North, West, and North-East, we offer private appointment fittings at three convenient studio locations:</p>
+    <div class="grid">
+      <div class="card"><h3>City Studio (North Melbourne)</h3><p>22b/70 Racecourse Rd, North Melbourne VIC 3051 — Ideal for inner-city and CBD brides.</p></div>
+      <div class="card"><h3>West Studio (Keilor East)</h3><p>105 Noga Avenue, Keilor East VIC 3033 — Serving brides in Keilor, Essendon, and Maribyrnong.</p></div>
+      <div class="card"><h3>North-East Studio (Doreen)</h3><p>4 Puckle Road, Doreen VIC 3754 — Bringing specialized bridal tailoring to the outer north.</p></div>
+    </div>
+  </div>
+  <div class="panel" id="a3" hidden>
+    <div class="grid">
+      <div class="card"><h3>Premium yet approachable</h3><p>A relaxed, stress-free, 1-on-1 studio experience.</p></div>
+      <div class="card"><h3>Couture-level precision</h3><p>Alterations carried out by hand by our master tailors, tailored to your exact measurements.</p></div>
+      <div class="card"><h3>All-in-one bridal hub</h3><p>Alterations, restructuring, custom veils, gloves, pressing and travel boxing under one roof.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section id="services">
+  <span class="tag">Section 3 · Services &amp; offerings (tabbed)</span>
+  <h2>Wedding Dress Alterations &amp; Custom Veils</h2>
+  <div class="tabs" role="tablist" data-g="svc">
+    <button role="tab" aria-selected="true" data-t="s1">Fit &amp; Length</button>
+    <button role="tab" aria-selected="false" data-t="s2">Structural Changes</button>
+    <button role="tab" aria-selected="false" data-t="s3">Accessories</button>
+    <button role="tab" aria-selected="false" data-t="s4">Press &amp; Express</button>
+  </div>
+  <div class="panel" id="s1">
+    <div class="grid">
+      <div class="card"><h3>Bodice &amp; Waist Tailoring</h3><p>Precision taking-in or letting-out of side seams, boning adjustments, and waistline reshaping for a sculpted fit.</p></div>
+      <div class="card"><h3>Custom Hemming</h3><p>Multi-layer organza, silk, tulle, and horsehair hem adjustments designed to let you walk and dance effortlessly.</p></div>
+      <div class="card"><h3>Bust &amp; Support Fitting</h3><p>Bust restructuring, cup insertion, and strap shortening to deliver complete confidence without visible lines.</p></div>
+    </div>
+  </div>
+  <div class="panel" id="s2" hidden>
+    <div class="grid">
+      <div class="card"><h3>Custom Bustle Creation</h3><p>Expertly engineered American, French, or Austrian bustles that lift your train seamlessly for the reception.</p></div>
+      <div class="card"><h3>Restructuring &amp; Modifications</h3><p>Add illusion lace sleeves, lower a backline, convert zip closures into lace-up corsets, or integrate heirloom fabrics.</p></div>
+    </div>
+  </div>
+  <div class="panel" id="s3" hidden>
+    <div class="two">
+      <div>
+        <h3>Bespoke Accessories (Custom Veils &amp; Gloves)</h3>
+        <p>Complete your bridal look with custom-designed accessories created right in our Melbourne studio. We handcraft bespoke single or multi-tier veils with custom length options (cathedral, chapel, fingertip), lace trims, pearl embellishments, and matching bridal gloves.</p>
+      </div>
+      <div class="ph">[VEIL &amp; GLOVES IMAGE]</div>
+    </div>
+  </div>
+  <div class="panel" id="s4" hidden>
+    <div class="grid">
+      <div class="card"><h3>Final Steam &amp; Press</h3><p>Professional bridal pressing to ensure every layer of your gown is wrinkle-free for photos.</p></div>
+      <div class="card"><h3>Overseas Travel Boxing</h3><p>Specialized acid-free tissue wrapping and compact travel boxing for destination weddings.</p></div>
+      <div class="card"><h3>Express Photo-Shoot Fixes</h3><p>Rapid turnaround alterations for last-minute photo shoots or tight wedding dates.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section id="gallery" class="alt">
+  <span class="tag">Section 4 · Transformation gallery (tabbed)</span>
+  <h2>Transformation Gallery</h2>
+  <div class="tabs" role="tablist" data-g="gal">
+    <button role="tab" aria-selected="true" data-t="g1">All</button>
+    <button role="tab" aria-selected="false" data-t="g2">Bustles</button>
+    <button role="tab" aria-selected="false" data-t="g3">Corsets &amp; Resizing</button>
+    <button role="tab" aria-selected="false" data-t="g4">Veils</button>
+  </div>
+  <div class="panel" id="g1"><div class="gal">
+    <figure><div class="ph">[BEFORE / AFTER – Bustle]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – Corset]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – Resizing]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[PHOTO – Custom veil]</div><figcaption>Caption placeholder</figcaption></figure>
+  </div></div>
+  <div class="panel" id="g2" hidden><div class="gal">
+    <figure><div class="ph">[BEFORE / AFTER – American bustle]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – French bustle]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – Austrian bustle]</div><figcaption>Caption placeholder</figcaption></figure>
+  </div></div>
+  <div class="panel" id="g3" hidden><div class="gal">
+    <figure><div class="ph">[BEFORE / AFTER – Lace-up corset]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – Bodice resize]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[BEFORE / AFTER – Boning adjustment]</div><figcaption>Caption placeholder</figcaption></figure>
+  </div></div>
+  <div class="panel" id="g4" hidden><div class="gal">
+    <figure><div class="ph">[PHOTO – Cathedral veil]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[PHOTO – Chapel veil]</div><figcaption>Caption placeholder</figcaption></figure>
+    <figure><div class="ph">[PHOTO – Fingertip veil with pearls]</div><figcaption>Caption placeholder</figcaption></figure>
+  </div></div>
+</section>
+
+<!-- SECTION 5 -->
+<section id="process">
+  <span class="tag">Section 5 · Process timeline</span>
+  <h2>The 4-Step Fitting Journey</h2>
+  <div class="steps">
+    <div class="step"><b class="n">01</b><h3>Book Consultation</h3><p>Select your preferred studio (Keilor East, North Melbourne, or Doreen) and reserve your initial 1-on-1 fitting.</p></div>
+    <div class="step"><b class="n">02</b><h3>Pinning &amp; Fitting</h3><p>Bring your wedding shoes and undergarments. We precisely pin every seam and discuss custom details.</p></div>
+    <div class="step"><b class="n">03</b><h3>Precision Crafting</h3><p>Our master tailors carry out all alterations by hand with couture-level craftsmanship.</p></div>
+    <div class="step"><b class="n">04</b><h3>Final Fit &amp; Steam</h3><p>Try on your perfected gown, approve the fit, and collect it fresh, steamed, and ready for your big day.</p></div>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section id="contact" class="alt">
+  <span class="tag">Section 6 · Contact &amp; booking (tabbed)</span>
+  <h2>Book an Appointment / Get a Quote</h2>
+  <div class="tabs" role="tablist" data-g="con">
+    <button role="tab" aria-selected="true" data-t="c1">Online Booking &amp; Quote Request</button>
+    <button role="tab" aria-selected="false" data-t="c2">Studio Locations &amp; Maps</button>
+  </div>
+  <div class="panel" id="c1">
+    <form onsubmit="return false">
+      <div class="f"><label for="n">Full Name</label><input type="text" id="n"></div>
+      <fieldset><legend>Select Studio Location</legend>
+        <label class="c"><input type="radio" name="loc"> City Studio (North Melbourne)</label>
+        <label class="c"><input type="radio" name="loc"> West Studio (Keilor East)</label>
+        <label class="c"><input type="radio" name="loc"> North-East Studio (Doreen)</label>
+      </fieldset>
+      <div class="f"><label for="p">Phone Number</label><input type="tel" id="p"></div>
+      <div class="f"><label for="e">Email Address</label><input type="email" id="e"></div>
+      <div class="f"><label for="d">Wedding Date</label><input type="date" id="d"></div>
+      <fieldset><legend>Services Needed</legend>
+        <label class="c"><input type="checkbox"> Hemming / Length</label>
+        <label class="c"><input type="checkbox"> Resizing</label>
+        <label class="c"><input type="checkbox"> Bustle</label>
+        <label class="c"><input type="checkbox"> Custom Veil</label>
+      </fieldset>
+      <div class="f full"><label for="u">Upload Dress Photos (for a rapid quote estimate – JPG/PNG)</label><input type="file" id="u" accept=".jpg,.jpeg,.png" multiple></div>
+      <div class="f full"><label for="m">Message / Notes</label><textarea id="m"></textarea></div>
+      <div class="full"><button class="btn" type="button">Submit Booking Request</button></div>
+    </form>
+  </div>
+  <div class="panel" id="c2" hidden>
+    <div class="grid">
+      <div class="card"><h3>City Studio (North Melbourne)</h3><address class="loc">22b/70 Racecourse Rd<br>North Melbourne VIC 3051</address><div class="ph map">[MAP]</div></div>
+      <div class="card"><h3>West Studio (Keilor East)</h3><address class="loc">105 Noga Avenue<br>Keilor East VIC 3033</address><div class="ph map">[MAP]</div></div>
+      <div class="card"><h3>North-East Studio (Doreen)</h3><address class="loc">4 Puckle Road<br>Doreen VIC 3754</address><div class="ph map">[MAP]</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  [LOGO] Nish’s Bridal Studio · bridalalterationsstudio.com.au<br>
+  North Melbourne · Keilor East · Doreen<br>
+  <span style="font-size:11px">Wireframe for review – final colours (champagne, ivory, slate grey, rose gold/burgundy accents), typography and imagery to follow in design phase.</span>
+</footer>
+
+<script>
+document.querySelectorAll('.tabs').forEach(function(bar){
+  bar.addEventListener('click',function(ev){
+    var b=ev.target.closest('button');if(!b)return;
+    bar.querySelectorAll('button').forEach(function(x){
+      var on=x===b;x.setAttribute('aria-selected',on);
+      document.getElementById(x.dataset.t).hidden=!on;
+    });
+  });
+});
+document.querySelectorAll('[data-tab="quote"]').forEach(function(a){
+  a.addEventListener('click',function(){var f=document.querySelector('#contact .tabs button');if(f)f.click();});
+});
+</script>
+</body>
+</html>
